@@ -1,0 +1,17 @@
+TARGET_NO_KERNEL := true
+TARGET_NO_BOOTLOADER := true
+
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a9
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_BOARD_PLATFORM := omap4
+
+BOARD_USES_GENERIC_AUDIO := true
+USE_CAMERA_STUB := true
+
+BOARD_EGL_CFG := device/sciaps/libz500/egl.cfg
+

@@ -32,11 +32,12 @@ on boot
 	chmod 0666 /dev/pvrsrvkm
 	chmod 0777 /dev/ttyO3
 
-on fs
-	# Backlight
 	chown system system /sys/class/backlight/pwm-backlight/brightness
 
 
+on fs
+	mount_all /fstab.libz500
+	
 
 # change permissions for ION driver
     chmod 0777 /dev/ion

@@ -1,6 +1,13 @@
 TARGET_NO_KERNEL := true
 TARGET_NO_BOOTLOADER := true
 
+OMAP_ENHANCEMENT := true
+OMAP_ENHANCEMENT_MULTIGPU := true
+ENHANCED_DOMX := true
+BLTSVILLE_ENHANCEMENT :=true
+BOARD_USES_DVP := true
+BOARD_USES_ARX := true
+
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -21,3 +28,6 @@ USE_CAMERA_STUB := true
 
 BOARD_EGL_CFG := device/sciaps/libz500/egl.cfg
 
+USE_OPENGL_RENDERER := true
+
+include device/ti/common-open/BoardConfig.mk

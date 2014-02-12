@@ -66,16 +66,23 @@ $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, device/ti/proprietary-open/omap4/ti-omap4-vendor.mk)
+$(call inherit-product, vendor/sciaps/wl12xx/ti-wl12xx-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS :=
+DEVICE_PACKAGE_OVERLAYS := device/sciaps/libz500/overlay
 
 # Copy files from our partitions folder to the appropriate outputs
 COPY_FILES   := $(foreach I,$(shell find $(LOCAL_PATH)/copyfiles/ -type f | sed 's/.*\/copyfiles\///'), $(LOCAL_PATH)/copyfiles/$(I):$(I))
 PRODUCT_COPY_FILES  += $(COPY_FILES)
 
-PRODUCT_PACKAGES +=
+PRODUCT_PACKAGES += \
+    lights.pcm049 \
+    busybox
+
 PRODUCT_COPY_FILES +=
 PRODUCT_NAME := full_libz500
 PRODUCT_DEVICE := libz500
 PRODUCT_MODEL := Sciaps LIBZ 500
+
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.opengles.version=131072
 

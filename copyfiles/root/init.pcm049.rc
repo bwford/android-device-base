@@ -30,6 +30,7 @@ on init
 on boot	
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
 	chmod 0777 /dev/ttyO3
+	chown system system /dev/i2c-3
 	chown system system /sys/class/backlight/pwm-backlight/brightness
 
 

@@ -77,7 +77,8 @@ PRODUCT_COPY_FILES  += $(COPY_FILES)
 PRODUCT_PACKAGES += \
     libzhw.omap4 \
     lights.pcm049 \
-    busybox
+    busybox \
+    LIBSHome
 
 PRODUCT_COPY_FILES +=
 PRODUCT_NAME := full_libz500

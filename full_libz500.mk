@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
     libzhw.omap4 \
     lights.pcm049 \
     busybox \
-    LIBSHome
+    LIBZHome \
+    LIBZFactoryMode
 
 PRODUCT_COPY_FILES +=
 PRODUCT_NAME := full_libz500

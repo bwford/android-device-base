@@ -12,7 +12,7 @@
 
 #include "i2c-dev.h"
 
-#define   LIBZHW_DEBUG   1
+#define LIBZHW_DEBUG 1
 
 #if LIBZHW_DEBUG
 #  define D(...)   ALOGD(__VA_ARGS__)
@@ -88,20 +88,31 @@ int sciaps_read_pressure(uint8_t* buffer, int length)
 	return bytesRead;
 }
 
+static int close_libzhw(struct hw_device_t* device)
+{
+	return 0;
+}
+
 static int open_libzhw(const struct hw_module_t* module, char const* name,
 	struct hw_device_t** device)
 {
-	struct libzhw_device_t *dev = malloc(sizeof(struct libzhw_device_t));
-	memset(dev, 0, sizeof(*dev));
+	ALOGD("in open_libzhw");
+	struct libzhw_device_t* dev;
+	dev = calloc(1, sizeof(struct libzhw_device_t));
+	if(!dev) {
+		return -ENOMEM;
+	}
 
 	dev->common.tag = HARDWARE_DEVICE_TAG;
 	dev->common.version = 0;
 	dev->common.module = (struct hw_module_t*)module;
+	dev->common.close = close_libzhw;
+
 	dev->read_micro = sciaps_read_micro;
 	dev->write_micro = sciaps_write_micro;
 	dev->read_pressure = sciaps_read_pressure;
 
-	*device = (struct hw_device_t*) dev;
+	*device = &dev->common;
 
 	D("LIBZ HW start initialization process...");
 
@@ -119,7 +130,7 @@ static struct hw_module_methods_t module_methods = {
 	.open = open_libzhw
 };
 
-const struct hw_module_t HAL_MODULE_INFO_SYS = {
+struct hw_module_t HAL_MODULE_INFO_SYM = {
 	.tag = HARDWARE_MODULE_TAG,
 	.version_major = 1,
 	.version_minor = 0,

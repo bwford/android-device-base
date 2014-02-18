@@ -55,3 +55,6 @@ service pvrsrvinit /vendor/bin/pvrsrvinit
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
 	class main
 
+service libzservice /system/bin/LIBZService
+	class main
+

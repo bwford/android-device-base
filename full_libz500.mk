@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
     libzhw.omap4 \
     lights.pcm049 \
     busybox \
+    LIBZService \
     LIBZHome \
     LIBZFactoryMode
 

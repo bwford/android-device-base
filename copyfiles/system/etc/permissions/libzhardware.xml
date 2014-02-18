@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+    <library name="com.sciaps.libz"
+            file="/system/framework/com.sciaps.libzhardware.jar" />
+</permissions>

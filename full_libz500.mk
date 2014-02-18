@@ -75,10 +75,10 @@ COPY_FILES   := $(foreach I,$(shell find $(LOCAL_PATH)/copyfiles/ -type f | sed 
 PRODUCT_COPY_FILES  += $(COPY_FILES)
 
 PRODUCT_PACKAGES += \
-    libzhw.omap4 \
     lights.pcm049 \
     busybox \
     LIBZService \
+    com.sciaps.libzhardware \
     LIBZHome \
     LIBZFactoryMode
 

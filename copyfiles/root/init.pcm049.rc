@@ -30,6 +30,7 @@ on init
 on boot	
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
 	chmod 0777 /dev/ttyO3
+	chown system system /dev/i2c-3
 	chown system system /sys/class/backlight/pwm-backlight/brightness
 
 
@@ -52,5 +53,8 @@ service pvrsrvinit /vendor/bin/pvrsrvinit
 # daemon will drop to user/group system/media_rw after initializing
 # underlying files in /data/media will be created with user and group media_rw (1023)
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+	class main
+
+service libzservice /system/bin/LIBZService
 	class main
 

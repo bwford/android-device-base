@@ -76,7 +76,11 @@ PRODUCT_COPY_FILES  += $(COPY_FILES)
 
 PRODUCT_PACKAGES += \
     lights.pcm049 \
-    busybox
+    busybox \
+    LIBZService \
+    com.sciaps.libzhardware \
+    LIBZHome \
+    LIBZFactoryMode
 
 PRODUCT_COPY_FILES +=
 PRODUCT_NAME := full_libz500

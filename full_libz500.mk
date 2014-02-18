@@ -82,7 +82,10 @@ PRODUCT_PACKAGES += \
     LIBZHome \
     LIBZFactoryMode
 
-PRODUCT_COPY_FILES +=
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml
+
+
 PRODUCT_NAME := full_libz500
 PRODUCT_DEVICE := libz500
 PRODUCT_MODEL := Sciaps LIBZ 500

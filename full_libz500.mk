@@ -83,7 +83,9 @@ PRODUCT_PACKAGES += \
     LIBZFactoryMode
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 
 PRODUCT_NAME := full_libz500
@@ -91,5 +93,6 @@ PRODUCT_DEVICE := libz500
 PRODUCT_MODEL := Sciaps LIBZ 500
 
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.opengles.version=131072
+        ro.opengles.version=131072 \
+        wifi.interface=wlan0
 

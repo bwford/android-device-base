@@ -1,3 +1,6 @@
+
+KERNEL_DIR := kernel
+
 TARGET_NO_KERNEL := true
 TARGET_NO_BOOTLOADER := true
 

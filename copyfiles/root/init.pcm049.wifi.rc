@@ -1,22 +1,21 @@
 on post-fs
        # give system access to wpa_supplicant.conf for backup and restore
-       mkdir /system/etc/wifi 0770 system wifi
+       mkdir /system/etc/wifi 0770 wifi wifi
        chmod 0770 /system/etc/wifi
        chmod 0660 /system/etc/wifi/wpa_supplicant.conf
-       chown system wifi /system/etc/wifi/wpa_supplicant.conf
-       mkdir /data/misc/wifi 0770 system wifi
-       mkdir /data/misc/wifi/sockets 0770 system wifi
-       chmod 0770 /data/misc/wifi
-       chmod 0660 /data/misc/wifi/wpa_supplicant.conf
-       chown wifi wifi /data/misc/wifi
-       chown wifi wifi /data/misc/wifi/wpa_supplicant.conf
+       chown wifi wifi /system/etc/wifi/wpa_supplicant.conf
        insmod /system/lib/modules/cfg80211.ko
        insmod /system/lib/modules/mac80211.ko
        insmod /system/lib/modules/wl12xx.ko
 
+on post-fs-data
+       mkdir /data/misc/wifi/sockets 0770 wifi wifi
+       mkdir /data/misc/dhcp 0770 dhcp dhcp
+
 service p2p_supplicant /system/bin/wpa_supplicant \
 	-iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -N \
-	-ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -e/data/misc/wifi/entropy.bin -puse_p2p_group_interface=1
+	-ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -e/data/misc/wifi/entropy.bin -puse_p2p
+_group_interface=1
 	#   we will start as root and wpa_supplicant will switch to user wifi
 	#   after setting up the capabilities required for WEXT
 	#   user wifi
@@ -37,8 +36,8 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 	disabled
 	oneshot
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -aABKL
-	class main
+service dhcpcd_wlan0 /system/bin/dhcpcd
+	group dhcp wifi system
 	disabled
 	oneshot
 

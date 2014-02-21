@@ -77,6 +77,7 @@ PRODUCT_COPY_FILES  += $(COPY_FILES)
 PRODUCT_PACKAGES += \
     lights.pcm049 \
     busybox \
+    Email \
     LIBZService \
     com.sciaps.libzhardware \
     LIBZHome \

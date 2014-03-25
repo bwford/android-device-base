@@ -27,6 +27,11 @@ on init
 
 	setprop lcd.landscape true
 
+	#setup the trigger gpio
+    write /sys/class/gpio/export "118"
+    write /sys/class/gpio/gpio118/direction "in"
+    write /sys/class/gpio/gpio118/edge "falling"
+
 
 on boot	
 	mount debugfs /sys/kernel/debug /sys/kernel/debug

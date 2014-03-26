@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
     LIBZService \
     libserviceJava_jni \
     CMFileManager \
+    aLogCat \
     Email \
     LIBSAlloyMatch \
     LIBZHome \

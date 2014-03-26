@@ -74,12 +74,27 @@ DEVICE_PACKAGE_OVERLAYS := device/sciaps/libz500/overlay
 COPY_FILES   := $(foreach I,$(shell find $(LOCAL_PATH)/copyfiles/ -type f | sed 's/.*\/copyfiles\///'), $(LOCAL_PATH)/copyfiles/$(I):$(I))
 PRODUCT_COPY_FILES  += $(COPY_FILES)
 
+#Graphics driver
+PRODUCT_PACKAGES += \
+        pvrsrvkm_sgx540_120.ko
+
+#Wifi Drivers
+PRODUCT_PACKAGES += \
+        calibrator \
+        mac80211.ko \
+        cfg80211.ko \
+        wl12xx.ko \
+        wl12xx_sdio.ko
+
 PRODUCT_PACKAGES += \
     lights.pcm049 \
     busybox \
+    playxsvf \
+    com.sciaps.libzhardware \
+    CMFileManager \
     Email \
     LIBZService \
-    com.sciaps.libzhardware \
+    LIBSAlloyMatch \
     LIBZHome \
     LIBZFactoryMode
 

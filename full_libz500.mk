@@ -91,9 +91,10 @@ PRODUCT_PACKAGES += \
     busybox \
     playxsvf \
     com.sciaps.libzhardware \
+    LIBZService \
+    libserviceJava_jni \
     CMFileManager \
     Email \
-    LIBZService \
     LIBSAlloyMatch \
     LIBZHome \
     LIBZFactoryMode

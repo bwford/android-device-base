@@ -55,6 +55,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES := \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
+# to flow down to ti-wpan-products.mk
+BLUETI_ENHANCEMENT := true
+
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/cibu-fonts/fonts.mk)
 $(call inherit-product-if-exists, external/lohit-fonts/fonts.mk)
@@ -66,7 +69,10 @@ $(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
 $(call inherit-product-if-exists, device/ti/proprietary-open/omap4/ti-omap4-vendor.mk)
+#$(call inherit-product, device/ti/proprietary-open/wl12xx/wpan/wl12xx-wpan-fw-products.mk)
+$(call inherit-product, vendor/sciaps/wl12xx/wpan/wl12xx-wpan-fw-products.mk)
 $(call inherit-product, vendor/sciaps/wl12xx/ti-wl12xx-vendor.mk)
+$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/sciaps/libz500/overlay
 
@@ -86,8 +92,14 @@ PRODUCT_PACKAGES += \
         wl12xx.ko \
         wl12xx_sdio.ko
 
+#Bluetooth stuff
+PRODUCT_PACKAGES += \
+	hciconfig \
+	hcitool 
+
 PRODUCT_PACKAGES += \
     lights.pcm049 \
+    wilink7.sh \
     busybox \
     playxsvf \
     com.sciaps.libzhardware \
@@ -103,7 +115,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml
 
 
 

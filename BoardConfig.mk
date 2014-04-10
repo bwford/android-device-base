@@ -41,4 +41,13 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wl12xx
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wl12xx_sdio.ko"
 WIFI_DRIVER_MODULE_NAME          := "wl12xx_sdio"
 
+ifdef BLUETI_ENHANCEMENT
+COMMON_GLOBAL_CFLAGS += -DBLUETI_ENHANCEMENT
+endif
+
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_TI := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sciaps/libz500/bluetooth
+
+
 include device/ti/common-open/BoardConfig.mk

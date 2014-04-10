@@ -32,6 +32,14 @@ on init
     write /sys/class/gpio/gpio118/direction "in"
     write /sys/class/gpio/gpio118/edge "falling"
 
+# for Bluetooth HID
+	chmod 0666 /dev/uhid
+
+# change permissions for Bluetooth/FM/GPS
+	chmod 0600 /sys/class/rfkill/rfkill0/state
+	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+	chmod 0600 /dev/ttyO1
+	chown bluetooth bluetooth /dev/ttyO1
 
 on boot	
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -65,4 +73,10 @@ service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
 
 service libzservice /system/bin/LIBZService
 	class main
+
+#shared transport user space mgr service for Bluetooth, FM and GPS
+	service uim /system/bin/uim-sysfs
+	class core
+	user bluetooth
+	group bluetooth net_bt_admin
 

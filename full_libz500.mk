@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
     aLogCat \
     Airdroid \
     Email \
-    LIBSAlloyMatch \
+    LIBZAlloyMatch \
     LIBZHome \
     LIBZFactoryMode
 

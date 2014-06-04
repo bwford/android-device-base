@@ -84,13 +84,9 @@ PRODUCT_COPY_FILES  += $(COPY_FILES)
 PRODUCT_PACKAGES += \
         pvrsrvkm_sgx540_120.ko
 
-#Wifi Drivers
+#Wifi Drivers util (only really needed for eng build)
 PRODUCT_PACKAGES += \
-        calibrator \
-        mac80211.ko \
-        cfg80211.ko \
-        wl12xx.ko \
-        wl12xx_sdio.ko
+        calibrator 
 
 #Bluetooth stuff
 PRODUCT_PACKAGES += \

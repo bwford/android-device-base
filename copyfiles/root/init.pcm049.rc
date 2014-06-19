@@ -75,6 +75,11 @@ on boot
 	chown gps system /data/gps
 	chmod 0770 /data/gps
 
+	# change permissions for Sensors
+	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053
+	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053/disable
+	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053/rate
+
 
 on fs
 	mount_all /fstab.libz500

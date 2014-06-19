@@ -17,4 +17,7 @@
 <resources>
     <!-- Turn off GPS as a default. -->
     <string name="def_location_providers_allowed" translatable="false"></string>
+
+    <!-- Turn off the lockscreen -->
+    <bool name="def_lockscreen_disabled">true</bool>
 </resources>

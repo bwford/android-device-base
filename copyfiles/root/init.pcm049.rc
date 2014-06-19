@@ -17,6 +17,8 @@ on init
 
 	# create real external storage
     export SECONDARY_STORAGE /storage/sdcard1
+    mkdir /mnt/media_rw 0700 media_rw media_rw
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0000 system system
     mkdir /storage/udisk 0000 system system
 

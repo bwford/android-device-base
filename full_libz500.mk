@@ -93,6 +93,18 @@ PRODUCT_PACKAGES += \
 	hciconfig \
 	hcitool 
 
+#Audio stuff
+PRODUCT_PACKAGES += \
+	audio.primary.pcm049 \
+	tinymix \
+	tinyplay \
+	tinycap \
+	libaudioutils
+
+# Enable AAC 5.1 decode (decoder)
+PRODUCT_PROPERTY_OVERRIDES += \
+	media.aac_51_output_enabled=true
+
 PRODUCT_PACKAGES += \
     lights.pcm049 \
     wilink7.sh \

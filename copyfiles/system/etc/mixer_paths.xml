@@ -1,0 +1,67 @@
+<mixer>
+  <!-- These are the initial mixer settings -->
+  <ctl name="Digital Loopback Switch" value="0" />
+  <ctl name="DAC Companding" value="0" />
+  <ctl name="ADC Companding" value="0" />
+  <ctl name="Playback De-emphasis" value="0" />
+  <ctl name="DAC Inversion Switch" value="0" />
+  <ctl name="PCM Volume" value="192" />
+  <ctl name="High Pass Filter Switch" value="0" />
+  <ctl name="High Pass Cut Off" value="0" />
+  <ctl name="ADC Inversion Switch" value="0" />
+  <ctl name="Capture Volume" value="0" />
+  <ctl name="Equaliser Function" value="0" />
+  <ctl name="EQ1 Cut Off" value="0" />
+  <ctl name="EQ1 Volume" value="24" />
+  <ctl name="Equaliser EQ2 Bandwith" value="0" />
+  <ctl name="EQ2 Cut Off" value="0" />
+  <ctl name="EQ2 Volume" value="24" />
+  <ctl name="Equaliser EQ3 Bandwith" value="0" />
+  <ctl name="EQ3 Cut Off" value="0" />
+  <ctl name="EQ3 Volume" value="24" />
+  <ctl name="Equaliser EQ4 Bandwith" value="0" />
+  <ctl name="EQ4 Cut Off" value="0" />
+  <ctl name="EQ4 Volume" value="24" />
+  <ctl name="Equaliser EQ5 Bandwith" value="0" />
+  <ctl name="EQ5 Cut Off" value="0" />
+  <ctl name="EQ5 Volume" value="24" />
+  <ctl name="DAC Playback Limiter Switch" value="0" />
+  <ctl name="DAC Playback Limiter Decay" value="0" />
+  <ctl name="DAC Playback Limiter Attack" value="0" />
+  <ctl name="DAC Playback Limiter Threshold" value="0" />
+  <ctl name="DAC Playback Limiter Boost" value="7" />
+  <ctl name="ALC Enable Switch" value="0" />
+  <ctl name="ALC Capture Max Gain" value="0" />
+  <ctl name="ALC Capture Min Gain" value="0" />
+  <ctl name="ALC Capture ZC Switch" value="0" />
+  <ctl name="ALC Capture Hold" value="0" />
+  <ctl name="ALC Capture Target" value="0" />
+  <ctl name="ALC Capture Mode" value="0" />
+  <ctl name="ALC Capture Decay" value="0" />
+  <ctl name="ALC Capture Attack" value="0" />
+  <ctl name="ALC Capture Noise Gate Switch" value="0" />
+  <ctl name="ALC Capture Noise Gate Threshold" value="0" />
+  <ctl name="Capture PGA ZC Switch" value="0" />
+  <ctl name="Capture PGA Volume" value="0" />
+  <ctl name="Speaker Playback ZC Switch" value="0" />
+  <ctl name="Speaker Playback Switch" value="0" />
+  <ctl name="Speaker Playback Volume" value="63" />
+  <ctl name="Aux Mode" value="0" />
+  <ctl name="Capture Boost(+20dB)" value="0" />
+  <ctl name="Mono Playback Switch" value="0" />
+  <ctl name="DAC 128x Oversampling Switch" value="0" />
+  <ctl name="ADC 128x Oversampling Switch" value="0" />
+  <ctl name="Aux Switch" value="0" />
+  <ctl name="MicN Switch" value="0" />
+  <ctl name="MicP Switch" value="0" />
+  <ctl name="Aux Volume" value="0" />
+  <ctl name="Mic Volume" value="0" />
+  <ctl name="Speaker Mixer PCM Playback Switch" value="0" />
+  <ctl name="Speaker Mixer Aux Playback Switch" value="0" />
+  <ctl name="Speaker Mixer Line Bypass Switch" value="0" />
+
+  <path name="speaker">
+    <ctl name="Speaker Mixer PCM Playback Switch" value="1" />
+    <ctl name="Speaker Playback Switch" value="1" />
+  </path>
+</mixer>

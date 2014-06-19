@@ -49,5 +49,7 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_TI := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sciaps/libz500/bluetooth
 
+BOARD_GPS_LIBRARIES := gps.pcm049
+
 
 include device/ti/common-open/BoardConfig.mk

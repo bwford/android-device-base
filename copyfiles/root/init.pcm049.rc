@@ -46,6 +46,34 @@ on boot
 	chmod 0777 /dev/ttyO3
 	chown system system /dev/i2c-3
 	chown system system /sys/class/backlight/pwm-backlight/brightness
+	
+	# GPS init
+	chown gps system /dev/ttyO0
+	chmod 0666 /dev/ttyO0
+
+	# GPS ON-OFF
+	write /sys/class/gpio/export 172
+	write /sys/class/gpio/gpio172/direction out
+	write /sys/class/gpio/gpio172/value 0
+	chown gps system /sys/class/gpio/gpio172/value
+	chmod 0666 /sys/class/gpio/gpio172/value
+
+	# GPS SYSTEM-ON
+	write /sys/class/gpio/export 177
+	write /sys/class/gpio/gpio177/direction in
+	chown gps system /sys/class/gpio/gpio177/value
+	chmod 0666 /sys/class/gpio/gpio177/value
+
+	# GPS NRESET
+	write /sys/class/gpio/export 174
+	write /sys/class/gpio/gpio174/direction out
+	write /sys/class/gpio/gpio174/value 1
+	chown gps system /sys/class/gpio/gpio174/value
+	chmod 0666 /sys/class/gpio/gpio174/value
+
+	mkdir /data/gps
+	chown gps system /data/gps
+	chmod 0770 /data/gps
 
 
 on fs

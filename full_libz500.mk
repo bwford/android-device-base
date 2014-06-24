@@ -124,7 +124,8 @@ PRODUCT_PACKAGES += \
     Email \
     LIBZAlloyMatch \
     LIBZHome \
-    LIBZFactoryMode
+    LIBZFactoryMode \
+    LIBZAlloySpec
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \

@@ -106,9 +106,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	media.aac_51_output_enabled=true
 
 #Sensors - Accelerometer
-PRODUCT_PACKAGES += \
-	sensors.pcm049 \
-	sensor.test
+#PRODUCT_PACKAGES += \
+#	sensors.pcm049 \
+#	sensor.test
 
 PRODUCT_PACKAGES += \
     lights.pcm049 \
@@ -131,9 +131,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     device/common/gps/gps.conf_US:system/etc/gps.conf
 
+
+#frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    
 
 
 PRODUCT_NAME := full_libz500

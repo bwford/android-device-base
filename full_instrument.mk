@@ -74,7 +74,7 @@ $(call inherit-product, vendor/sciaps/wl12xx/wpan/wl12xx-wpan-fw-products.mk)
 $(call inherit-product, vendor/sciaps/wl12xx/ti-wl12xx-vendor.mk)
 $(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/sciaps/libz500/overlay
+DEVICE_PACKAGE_OVERLAYS := device/sciaps/instrument/overlay
 
 # Copy files from our partitions folder to the appropriate outputs
 COPY_FILES   := $(foreach I,$(shell find $(LOCAL_PATH)/copyfiles/ -type f | sed 's/.*\/copyfiles\///'), $(LOCAL_PATH)/copyfiles/$(I):$(I))
@@ -156,9 +156,9 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=200
 
-PRODUCT_NAME := full_libz500
-PRODUCT_DEVICE := libz500
-PRODUCT_MODEL := Sciaps LIBZ 500
+PRODUCT_NAME := full_instrument
+PRODUCT_DEVICE := instrument
+PRODUCT_MODEL := Sciaps Instrument
 PRODUCT_MANUFACTURER := Sciaps
 
 PRODUCT_PROPERTY_OVERRIDES += \

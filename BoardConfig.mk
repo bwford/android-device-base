@@ -23,13 +23,13 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOARD_PLATFORM := omap4
 
 TARGET_NO_RADIOIMAGE := true
-TARGET_BOOTLOADER_BOARD_NAME := libz500
+TARGET_BOOTLOADER_BOARD_NAME := instrument
 
 
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := true
 
-BOARD_EGL_CFG := device/sciaps/libz500/egl.cfg
+BOARD_EGL_CFG := device/sciaps/instrument/egl.cfg
 
 USE_OPENGL_RENDERER := true
 
@@ -47,7 +47,7 @@ endif
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_TI := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sciaps/libz500/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sciaps/instrument/bluetooth
 
 BOARD_GPS_LIBRARIES := gps.pcm049
 

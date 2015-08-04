@@ -35,6 +35,9 @@ on init
 # for Raman Power Micro
 	chmod 0666 /dev/i2c-1
 
+# for CPLD SPI device
+	chmod 0666 /dev/spidev1.0
+
 # change permissions for Bluetooth/FM/GPS
 	chmod 0600 /sys/class/rfkill/rfkill0/state
 	chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
@@ -43,7 +46,6 @@ on init
 
 on boot	
 	mount debugfs /sys/kernel/debug /sys/kernel/debug
-	chmod 0777 /dev/ttyO3
 	chown system system /dev/i2c-3
 	chown system system /sys/class/backlight/pwm-backlight/brightness
 	
@@ -79,8 +81,6 @@ on boot
 	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053
 	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053/disable
 	chown system system /sys/bus/i2c/drivers/adxl34x/4-0053/rate
-
-	chmod 0666 /dev/tty03
 
 	write /sys/power/wake_lock init.pcm049.rc_no_suspend
 
@@ -119,13 +119,3 @@ service libzservice /system/bin/LIBZService
 	class core
 	user bluetooth
 	group bluetooth net_bt_admin
-
-# install modules based on KSP5012 FPGA version
-# For FPGA Version >= 3:
-#   1 - insmod omap4ksp5012-version.ko bus_id=1
-#   4 - insmod omap4ksp5012-version.ko bus_id=4
-service fpga_ver_chk /system/xbin/fpga.pcm049 1
-	class core
-	user root
-	group root
-	oneshot
